@@ -13,16 +13,28 @@
 """
 
 ######################################
+import argparse
 import numpy as np
 from datetime import datetime
 
 ######################################
+
+def readCommands():
+    """
+    Read commandline arguments
+    """
+    p = argparse.ArgumentParser(description=("An illustration of a command line parser"))
+    p.add_argument("--numb", dest="numb", type=int, default=40, help=("Length of array to generate\nDefault=40"))
+    cmdargs = p.parse_args()
+    return cmdargs
+    
+    
 class Minimum(object):
     # an attribute
     numb_accounts=0
     
     # creation method
-    def __init__(self,number):
+    def __init__(self,number=10): # the default length of array is 10
         print("Creating a class")
         self.number=number
         Minimum.numb_accounts+=1
@@ -59,5 +71,11 @@ class Minimum(object):
 
 ############################r)
                         
-
+if __name__ == '__main__':
+    """
+    Main block
+    """
+    cmd = readCommands()
+    y = Minimum();
+    y.findMini() # call the 
     
