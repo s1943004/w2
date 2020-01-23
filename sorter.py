@@ -29,7 +29,7 @@ def readCommands():
     return cmdargs
     
     
-class Minimum(object):
+class dataSorter(object):
     # an attribute
     numb_accounts=0
     
@@ -37,7 +37,7 @@ class Minimum(object):
     def __init__(self,number=10): # the default length of array is 10
         print("Creating a class")
         self.number=number
-        Minimum.numb_accounts+=1
+        dataSorter.numb_accounts+=1
        
     # methods
     def findMini(self):
@@ -76,6 +76,6 @@ if __name__ == '__main__':
     Main block
     """
     cmd = readCommands()
-    y = Minimum();
+    y = dataSorter();
     y.findMini() # call the 
     
