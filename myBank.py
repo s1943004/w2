@@ -5,14 +5,17 @@
 import numpy as np
 
 class yourBank(object):
+    
   # an attribute
   numb_accounts=0
+  
   # creation method
   def __init__(self,name,balance):
     print("Creating a class")
     self.name=name
     self.balance=balance
     yourBank.numb_accounts+=1
+    
   # methods
   def deposit(self,amt):
     self.balance=self.balance+amt
@@ -22,9 +25,13 @@ class yourBank(object):
     return self.balance
   def tax(self,rate):
     self.balance=self.balance-self.balance*rate
-  
+
+# new classes 'myBank', inheriting from old class 'yourBank' 
 class myBank(yourBank):
+    
+  # reloading pre-defined method'inquiry()'
   def inquiry(self):
+    
     a = np.random.random(1)
     if a< 0.1:
       return self.balance*1.1;
